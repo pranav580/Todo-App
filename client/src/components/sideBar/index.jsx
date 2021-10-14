@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import './sideBar.css';
-import pagesListData from '../Data/pagesList';
 
-function PageNameInput({setInput,pageList,setpageList}){
+function PageNameInput({setInput,setpageList}){
     const [pageName,setPageName]=useState("")
     const addPage=()=>{
         const pagesName = {
@@ -25,9 +24,12 @@ function SideBar() {
     // eslint-disable-next-line
     const [pageList,setpageList] = useState([]);
     const [input,setInput] = useState(false);
-    const deletePAge=()=>{
-        
+    const deletePAge=(id)=>{
+        const oldPageList = [...pageList];
+        const NewPageList = oldPageList.filter((items)=>items.P_ID !== id);
+        setpageList(NewPageList);
     }
+
     return(
         <div className="sidebar">
             <div className="signIn">
@@ -56,7 +58,7 @@ function SideBar() {
                     ))}
                 </div>
 
-                {input? <PageNameInput setInput={setInput} pageList={pageList} setpageList={setpageList}/> : console.log(input)}
+                {input? <PageNameInput setInput={setInput} setpageList={setpageList}/> : null}
 
                 <div className="addBTN" onClick={()=>{setInput(true)}}>
                     + Add Page
