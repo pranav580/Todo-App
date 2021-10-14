@@ -1,6 +1,46 @@
 .mainWorkspace{
     background-color: #282828;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
+.WorkSpace{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.TableBoard{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+}
+.tableView{
+    background-color: grey;
+    padding: 10px 12px 10px 10px;
+    border-radius: 10px 0 0 10px;
+}
+.boardView{
+    background-color: rgb(177, 176, 176);
+    padding: 10px 10px 10px 12px;
+    border-radius: 0 10px 10px 0;
+}
+
+
+.Table{
+    width: 80%;
+    align-items: center;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color: whitesmoke;
+  }
+  
+  th, td {
+    border: 1px solid whitesmoke;
+    text-align: left;
+    padding: 8px;
+  }
+
+  

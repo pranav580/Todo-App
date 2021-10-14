@@ -11,10 +11,9 @@ button{
 
 .sidebar{
     background-color: #404040;
-    position: absolute;
     padding: 20px;
     width: auto;
-    height: 100vh;
+    height: 100%;
 }
 .signIn{
     width: 250px;
