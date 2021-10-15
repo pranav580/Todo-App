@@ -8,7 +8,7 @@ function Table({tableData, setTableData}){
     const [id,setId] = useState(100);
     const [title,setTitle] = useState();
     const [discription,setDiscription] = useState();
-    const [status,setStatus] = useState();
+    const [status,setStatus] = useState("To do");
     const [created_at,setCreated_at] = useState();
     const [updated_at,setUpdated_at] = useState();
     const [due_date,setDue_date] = useState();
@@ -29,8 +29,9 @@ function Table({tableData, setTableData}){
             var m = n.getMonth() + 1;
             var d = n.getDate();
             var time = n.getHours() + ":" + n.getMinutes() + ":" + n.getSeconds();
-            var DatenTime = d+"-"+m+"-"+y+"  "+time;
-            setUpdated_at(DatenTime);
+            var Time = d+"-"+m+"-"+y+"  "+time;
+            setUpdated_at(Time);
+            setCreated_at(Time);
             setId(id=>id+1)
             const Data = {
                 id,
@@ -86,7 +87,7 @@ function Table({tableData, setTableData}){
                                 setTitle={setTitle} 
                                 setDiscription={setDiscription} 
                                 setStatus={setStatus} 
-                                setCreated_at={setCreated_at} 
+                                setCreated_at={setCreated_at}
                                 setDue_date={setDue_date} 
                             />: null}
                     

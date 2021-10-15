@@ -1,11 +1,15 @@
 function TableInput({setId,setTitle,setDiscription,setStatus,setCreated_at,setDue_date}){
   
-    var n =  new Date();
-    var y = n.getFullYear();
-    var m = n.getMonth() + 1;
-    var d = n.getDate();
-    var time = n.getHours() + ":" + n.getMinutes() + ":" + n.getSeconds();
-    var DatenTime = d+"-"+m+"-"+y+"  "+time;
+    const DateTime=()=>{
+        var n =  new Date();
+        var y = n.getFullYear();
+        var m = n.getMonth() + 1;
+        var d = n.getDate();
+        var time = n.getHours() + ":" + n.getMinutes() + ":" + n.getSeconds();
+        var DatenTime = d+"-"+m+"-"+y+"  "+time;
+        return(DatenTime)
+    }
+    
     return(
         <>
            <tr>
@@ -23,12 +27,17 @@ function TableInput({setId,setTitle,setDiscription,setStatus,setCreated_at,setDu
                 </td>
                 <td>
                     {/* Status */}
-                    <input type="text" onChange={(e)=>{setStatus(e.target.value)}}/>
+                    {/* <input type="text" onChange={(e)=>{setStatus(e.target.value)}}/> */}
+                    <select name="status" onChange={(e)=>{setStatus(e.target.value)}}>
+                        <option value="To Do">To Do</option>
+                        <option value="Doing">Doing</option>
+                        <option value="Done">Done</option>
+                    </select>
                 </td>
                 <td>
                     {/* Created_at */}
-                    {DatenTime}
-                    {setCreated_at(DatenTime)}
+                    {DateTime()}
+                    {setCreated_at(DateTime)}
                 </td>
                 <td>
                     {/* Upadated_at */}                    

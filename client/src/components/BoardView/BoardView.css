@@ -1,0 +1,13 @@
+.BoardView{
+    background-color: aliceblue;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Card{
+    width: 50px;
+    background-color: aliceblue;
+    color: black;
+    border: solid black 2px;
+}

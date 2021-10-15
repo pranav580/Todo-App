@@ -35,6 +35,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     color: whitesmoke;
+    border: solid #282828 2px;
   }
   
   th, td {
